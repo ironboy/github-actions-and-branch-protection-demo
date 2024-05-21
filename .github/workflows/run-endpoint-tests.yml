@@ -1,0 +1,33 @@
+name: .NET Core Desktop
+
+on:
+  push:
+    branches: [ "main","dev" ]
+  pull_request:
+    branches: [ "main","dev" ]
+
+jobs:
+
+  build:
+
+    runs-on: ubuntu-latest
+
+    # Checkout the github repository on the runner
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v4
+      with:
+        fetch-depth: 0
+    
+    # Run npm install to install our dependencies
+    - name: Run npm install
+      run: npm install
+
+    # Start backend non-blocking
+    - name: Start the backend
+      run: nohup node index.js &
+
+    # Run the endpoint tests
+    - name: Run the endpoint tests
+      shell: bash
+      run: npm test
