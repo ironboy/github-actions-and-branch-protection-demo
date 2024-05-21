@@ -1,0 +1,88 @@
+{
+	"info": {
+		"_postman_id": "667dfbd8-3707-4e4b-8274-f30685c1c657",
+		"name": "Example-for-git-branching-repo",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "30881265"
+	},
+	"item": [
+		{
+			"name": "Testing /api/fine",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"let response = pm.response.json();",
+							"",
+							"pm.test(\"Correct response?\", () => {",
+							"    pm.expect(response).to.deep.equal({feeling:\"Fine\"})",
+							"})"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:3010/api/fine",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "3010",
+					"path": [
+						"api",
+						"fine"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Testing /api/bad",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"let response = pm.response.json();",
+							"",
+							"pm.test(\"Correct response?\", () => {",
+							"    pm.expect(response).to.deep.equal({feeling:\"Bad\"})",
+							"})"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:3010/api/bad",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "3010",
+					"path": [
+						"api",
+						"bad"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
