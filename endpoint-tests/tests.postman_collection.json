@@ -16,7 +16,7 @@
 							"let response = pm.response.json();",
 							"",
 							"pm.test(\"Correct response?\", () => {",
-							"    pm.expect(response).to.deep.equal({feeling:\"Fine\"})",
+							"    pm.expect(response).to.deep.equal({feeling:\"Great\"})",
 							"})"
 						],
 						"type": "text/javascript",
@@ -55,7 +55,7 @@
 							"let response = pm.response.json();",
 							"",
 							"pm.test(\"Correct response?\", () => {",
-							"    pm.expect(response).to.deep.equal({feeling:\"Bad\"})",
+							"    pm.expect(response).to.deep.equal({feeling:\"Awful\"})",
 							"})"
 						],
 						"type": "text/javascript",
